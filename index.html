@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <!-- https://cdnjs.com/libraries/twitter-bootstrap/5.0.0-beta1 -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css" />
+
+    <!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="nav.css" />
+
+
+    <title>資管系公告看板系統</title>
+</head>
+
+<style>
+    #box1 {
+        height: 80vh;
+        width: 100%;
+        background-image: url(picture/desktop01.png);
+        background-size: cover;
+        display: table;
+        background-attachment: fixed;
+    }
+
+    #box2 {
+        height: 80vh;
+        width: 100%;
+        background-image: url(picture/desktop02.jpg);
+        background-size: cover;
+        display: table;
+        background-attachment: fixed
+    }
+
+    #box3 {
+        height: 80vh;
+        width: 100%;
+        background-image: url(picture/desktop03.jpg);
+        background-size: cover;
+        display: table;
+        background-attachment: fixed;
+    }
+
+    p {
+        font-size: 1.4em;
+        margin: 0;
+        opacity: 0.8;
+        margin-top: 30px;
+        font-family: "poppins", sans-serif;
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="new.html">最新消息</a></li>
+            <li><a href="picture.html">活動照片</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">關於我們</a>
+                <div class="dropdown-content">
+                    <a href="contcact.html">聯絡方式</a>
+                    <a href="location.html">所在位置</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div class=" p-1 bg-dark text-white text-center">
+        <p>資管系專屬公佈欄</p>
+    </div>
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+    <!-- https://cdnjs.com/libraries/popper.js/2.5.4 -->
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"
+    ></script> -->
+
+    <!-- More: https://getbootstrap.com/docs/5.0/getting-started/introduction/ -->
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <!-- https://cdnjs.com/libraries/twitter-bootstrap/5.0.0-beta1 -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css" />
+
+    <!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="nav.css" />
+    <!--地圖-->
+    <link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
+    <script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
+
+
+    <title>資管系公告看板系統</title>
+</head>
+
+<style>
+    p {
+        font-size: 1.4em;
+        margin: 0;
+        opacity: 0.8;
+        margin-top: 30px;
+        font-family: "poppins", sans-serif;
+    }
+
+    #mapid {
+        height: 580px;
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="new.html">最新消息</a></li>
+            <li><a href="picture.html">活動照片</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">關於我們</a>
+                <div class="dropdown-content">
+                    <a href="contcact.html">聯絡方式</a>
+                    <a href="location.html">所在位置</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div id="mapid"></div>
+    <div class=" p-1 bg-dark text-white text-center">
+        <p>資管系專屬公佈欄</p>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+    <!-- https://cdnjs.com/libraries/popper.js/2.5.4 -->
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"
+    ></script> -->
+
+    <!-- More: https://getbootstrap.com/docs/5.0/getting-started/introduction/ -->
+    <script type="text/javascript">
+
+
+        // 建立 Leaflet 地圖
+        var map = L.map('mapid');
+
+        // 設定經緯度座標
+        map.setView(new L.LatLng(23.703379153915375, 120.42951095767047), 12);
+
+        // 設定圖資來源
+        var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        var osm = new L.TileLayer(osmUrl, { minZoom: 8, maxZoom: 16 });
+        map.addLayer(osm);
+        var marker = L.marker([23.703379153915375, 120.42951095767047]).addTo(map);
+        var popup = L.popup()
+            .setLatLng([23.70342544571125, 120.42955936159662])
+            .setContent("雲林本校：虎尾科大")
+            .openOn(map);
+
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent("經緯度座標：" + e.latlng.toString())
+                .openOn(map);
+        }
+
+        map.on('click', onMapClick);
+    </script>
+
+
+</body>
+
+</html>
